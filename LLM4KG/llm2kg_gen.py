@@ -14,7 +14,7 @@ Abstract: {}
 Entity: {}
 Output: '''
 
-years = [2011]
+years = [2011,2012]
 
 """Due to hardware as well as API limitations, I would not be able to use data from all the years to construct the knowledge graph. I am thus using
     only 2011 and 12 ; and the rest of the relations are from the official implementation."""
