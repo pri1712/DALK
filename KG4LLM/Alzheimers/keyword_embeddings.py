@@ -9,7 +9,7 @@ import pickle
 
 os.environ['hftoken'] = ''
 
-df = pd.read_csv('/content/drive/MyDrive/code/DALK/KG4LLM/Alzheimers/train_s2s.txt', sep='\t', header=None, names=['head', 'relation', 'tail'])
+df = pd.read_csv('KG4LLM/Alzheimers/train_s2s.txt', sep='\t', header=None, names=['head', 'relation', 'tail'])
 entity = set()
 for _, item in tqdm(df.iterrows()):
     entity.add(item[0])
@@ -19,20 +19,19 @@ entity=list(entity)
 print("Number of entities:",len(entity))
 
 entity_words = set()
-for file in os.listdir('/content/drive/MyDrive/code/DALK/KG4LLM/Alzheimers/result_ner'):
-    dataset = json.load(open(os.path.join('/content/drive/MyDrive/code/DALK/KG4LLM/Alzheimers/result_ner', file)))
+for file in os.listdir('KG4LLM/Alzheimers/result_ner'):
+    dataset = json.load(open(os.path.join('KG4LLM/Alzheimers/result_ner', file)))
     for item in dataset:
         k_list = item['entity'].split('\n')
         for k in k_list:
             try:
-                k = k.split('.')[1].strip() #as the dataset contains entities in the format 1. entity1 , 2.entity2 ; thus we remove these numbers
-                #and then consider the entity
+                k = k.split('.')[1].strip() 
                 entity_words.add(k)
             except:
                 print(k)
                 continue
 
-keywords = list(entity_words) #all the keywords are stored in this list.
+keywords = list(entity_words)
 print("Number of keywords:"len(keywords))
 
 model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
@@ -44,7 +43,7 @@ entity_emb_dict = {
     "embeddings": embeddings,
 }
 
-with open("/content/drive/MyDrive/code/DALK/KG4LLM/Alzheimers/entity_embeddings.pkl", "wb") as f:
+with open("Alzheimers/entity_embeddings.pkl", "wb") as f:
     pickle.dump(entity_emb_dict, f)
 print("Successfully encoded all entities")
 
