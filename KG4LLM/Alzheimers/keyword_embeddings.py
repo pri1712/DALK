@@ -7,7 +7,7 @@ import torch
 from sentence_transformers import SentenceTransformer
 import pickle
 
-os.environ['hftoken'] = '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'
+os.environ['hftoken'] = ''
 
 df = pd.read_csv('/content/drive/MyDrive/code/DALK/KG4LLM/Alzheimers/train_s2s.txt', sep='\t', header=None, names=['head', 'relation', 'tail'])
 entity = set()
