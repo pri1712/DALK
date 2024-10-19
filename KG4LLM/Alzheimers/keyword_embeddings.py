@@ -52,6 +52,6 @@ keyword_emb_dict = {
     "keywords": keywords,
     "embeddings": embeddings,
 }
-with open("/content/drive/MyDrive/code/DALK/KG4LLM/Alzheimers/keyword_emb.pkl", "wb") as f:
+with open("KG4LLM/Alzheimers/keyword_emb.pkl", "wb") as f:
     pickle.dump(keyword_emb_dict, f)
 print("Successfully encoded all keywords")
