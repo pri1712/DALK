@@ -1,10 +1,11 @@
 import time
 import openai
+import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from google.api_core import retry
-palm.configure(api_key='')#replace this to your key
-api_key = ''#replace this to your key
-openai.api_key=api_key
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+openai.api_key=os.environ["OPENAI_API"]
 
 model = genai.GenerativeModel(model_name='gemini-1.5-flash')
 
