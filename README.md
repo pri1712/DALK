@@ -1,4 +1,7 @@
 # DALK: Dynamic Co-Augmentation of LLMs and KGs for Alzheimer’s Disease Research
+
+![image](https://github.com/user-attachments/assets/22bf3fb3-2d49-45c5-a7c2-5419415346ac)
+
 This repository contains the implementation of the DALK framework, which dynamically integrates Large Language Models (LLMs) and Knowledge Graphs (KGs) to improve query responses related to Alzheimer’s Disease (AD). The project uses open-source LLaMA models and Neo4j for knowledge graph storage. LLaMa is used for generating answers to given queries and Google Gemini is used to extract entities from the given annotated data.
 
 ## Overview:
